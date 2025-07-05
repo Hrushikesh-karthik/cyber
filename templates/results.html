@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head><title>Scan Results</title></head>
+  <body>
+    <h2>Scan Results</h2>
+    {% for scan in scans %}
+      <div>
+        <h3>{{scan.target_url}} ({{scan.scan_date}})</h3>
+        <pre>{{scan.summary}}</pre>
+        <details>
+          <summary>See full details</summary>
+          <pre>{{scan.result}}</pre>
+        </details>
+      </div>
+    {% endfor %}
+    <a href="/">New Scan</a>
+  </body>
+</html>
